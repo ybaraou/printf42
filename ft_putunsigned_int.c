@@ -1,6 +1,8 @@
-int	get_len(unsigned int c)
+#include "ft_printf.h"
+
+static int	get_lenu(unsigned int c)
 {
-	int			len;
+	int	len;
 
 	len = 1;
 	while (c > 9)
@@ -11,12 +13,12 @@ int	get_len(unsigned int c)
 	return (len);
 }
 
-char	*convert_to_char(unsigned int num)
+static char	*convert_to_charu(unsigned int num)
 {
 	int		len;
 	char	*res;
 
-	len = get_len(num);
+	len = get_lenu(num);
 	res = (char *)malloc(sizeof(char) * len + 1);
 	if (!res)
 		return (NULL);
@@ -31,13 +33,13 @@ char	*convert_to_char(unsigned int num)
 	return (res);
 }
 
-int ft_putunsigned_int(unsigned int n)
+int	ft_putunsigned_int(unsigned int n)
 {
-    char    *s;
-    int     count;
+	char *s;
+	int count;
 
-    s = convert_to_char(n);
-    count = ft_putstr(s);
-    free(s);
-    return (count);
+	s = convert_to_charu(n);
+	count = ft_putstr(s);
+	free(s);
+	return (count);
 }

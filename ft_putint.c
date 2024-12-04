@@ -1,4 +1,6 @@
-int	get_len(long int num, int is_neg)
+#include "ft_printf.h"
+
+static int	get_len(long int num, int is_neg)
 {
 	int			len;
 	long int	c;
@@ -15,7 +17,7 @@ int	get_len(long int num, int is_neg)
 	return (len);
 }
 
-char	*convert_to_char(long int num, int is_neg)
+static char	*convert_to_char(long int num, int is_neg)
 {
 	int		len;
 	char	*res;
@@ -37,7 +39,7 @@ char	*convert_to_char(long int num, int is_neg)
 	return (res);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
 	long int	num;
 	int			is_neg;
@@ -56,13 +58,13 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-int ft_putint(int n)
+int	ft_putint(int n)
 {
-    char    *s;
-    int     count;
+	char *s;
+	int count;
 
-    s = ft_itoa(n);
-    count = ft_putstr(s);
-    free(s);
-    return (count);
+	s = ft_itoa(n);
+	count = ft_putstr(s);
+	free(s);
+	return (count);
 }
