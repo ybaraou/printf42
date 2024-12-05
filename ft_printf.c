@@ -67,7 +67,7 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		count;
 
-	if (str == NULL)
+	if (str == NULL || write(1,"",0) == -1)
 		return (-1);
 	va_start(args, str);
 	i = 0;

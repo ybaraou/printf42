@@ -173,6 +173,40 @@ int main() {
      if (ret_printf != ret_ft_printf) {
         printf("!!!!!!!!!! Les retours diffèrent pour NULL===== printf===%d======ft_printf====%d\n", ret_printf, ret_ft_printf);
     }
+
+    // Test avec printf avant la fermeture de stdout
+    printf("Test avant close(1) - printf\n");  // Cela devrait afficher et retourner le nombre de caractères imprimés
+    ret_printf = printf("Test avant close(1) - printf\n");
+    printf("Valeur retour de printf: %d\n", ret_printf);  // Affiche le retour de printf
+
+    // Test avec ft_printf avant la fermeture de stdout
+    ft_printf("Test avant close(1) - ft_printf\n");  // Cela devrait afficher et retourner le nombre de caractères imprimés
+    ret_ft_printf = ft_printf("Test avant close(1) - printf\n");
+    printf("Valeur retour de ft_printf: %d\n", ret_ft_printf);  // Affiche le retour de ft_printf
+
+    // Fermer stdout
+    close(1);
+
+    // Test avec printf après la fermeture de stdout
+    ret_printf = printf("Test après close(1) - printf\n");  // Ne devrait pas afficher, mais retourne peut-être un nombre de caractères
+    printf("Valeur retour de printf après close(1): %d\n", ret_printf);
+
+    // Test avec ft_printf après la fermeture de stdout
+    ret_ft_printf = ft_printf("Test après close(1) - printf\n");  // Ne devrait pas afficher, mais retourne peut-être un nombre de caractères
+    printf("Valeur retour de ft_printf après close(1): %d\n", ret_ft_printf);
+
+    // Réouvrir stdout
+    freopen("/dev/tty", "w", stdout);
+
+    printf("Valeur de retour, printf===%d===ft_printf===%d== \n", ret_printf, ret_ft_printf);
+    // Test avec printf après réouverture de stdout
+    ret_printf = printf("Test après réouverture de stdout - printf\n");  // Cela devrait afficher et retourner le nombre de caractères imprimés
+    printf("Valeur retour de printf après réouverture: %d\n", ret_printf);
+
+    // Test avec ft_printf après réouverture de stdout
+    ret_ft_printf = ft_printf("Test après réouverture de stdout - printf\n");  // Cela devrait afficher et retourner le nombre de caractères imprimés
+    printf("Valeur retour de ft_printf après réouverture: %d\n", ret_ft_printf);
+
     return 0;
 }
 
