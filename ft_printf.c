@@ -6,7 +6,7 @@
 /*   By: yolaoual <yolaoual@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 08:58:19 by yolaoual          #+#    #+#             */
-/*   Updated: 2024/11/26 08:58:26 by yolaoual         ###   ########.fr       */
+/*   Updated: 2024/12/05 10:53:15 by yolaoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,12 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		count;
 
+	if (str == NULL)
+		return (-1);
 	va_start(args, str);
 	i = 0;
 	count = 0;
-	while (str && str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{

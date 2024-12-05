@@ -162,6 +162,17 @@ int main() {
         printf("!!!!!!!!!! Les retours diffèrent pour '%%'\n");
     }
 
+    ret_printf =  printf(NULL, 5, 10);
+    ret_ft_printf = ft_printf(NULL, 5, 10);
+     if (ret_printf != ret_ft_printf) {
+        printf("!!!!!!!!!! Les retours diffèrent pour NULL, 5, 10==printf===%d===ft_printf====%d\n", ret_printf, ret_ft_printf);
+    }
+
+     ret_printf =  printf(NULL);
+    ret_ft_printf = ft_printf(NULL);
+     if (ret_printf != ret_ft_printf) {
+        printf("!!!!!!!!!! Les retours diffèrent pour NULL===== printf===%d======ft_printf====%d\n", ret_printf, ret_ft_printf);
+    }
     return 0;
 }
 
