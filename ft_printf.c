@@ -63,9 +63,9 @@ static int	print_arg(va_list args, const char c)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	int i;
-	int count;
+	va_list	args;
+	int		i;
+	int		count;
 
 	va_start(args, str);
 	i = 0;

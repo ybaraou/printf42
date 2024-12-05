@@ -72,8 +72,8 @@ static char	*ft_itoa(int n)
 
 int	ft_putint(int n)
 {
-	char *s;
-	int count;
+	char	*s;
+	int		count;
 
 	s = ft_itoa(n);
 	count = ft_putstr(s);

@@ -47,8 +47,8 @@ static char	*convert_to_charu(unsigned int num)
 
 int	ft_putunsigned_int(unsigned int n)
 {
-	char *s;
-	int count;
+	char	*s;
+	int		count;
 
 	s = convert_to_charu(n);
 	count = ft_putstr(s);

@@ -45,7 +45,7 @@ static int	get_len_hex(unsigned int n)
 
 int	ft_puthex(unsigned int n, char c)
 {
-	int count;
+	int	count;
 
 	writehex(n, c);
 	count = get_len_hex(n);

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
 static void	write_ptr(uintptr_t p)
@@ -41,7 +40,7 @@ static int	get_len_ptr(uintptr_t p)
 
 int	ft_putptr(uintptr_t p)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (p == 0)
